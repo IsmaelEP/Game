@@ -1,0 +1,67 @@
+#include <iostream>
+
+using namespace std;
+ 
+
+int main()
+{
+
+    
+    struct rum{
+        
+        int rnd = rand() % 999999999; 
+    
+        int rnd1 = rnd/1000000 % 1000;
+        int rnd2 = rnd/1000 % 1000;
+        int rnd3 = rnd % 1000;
+        
+        
+        int score1 = (rnd1 % 10) + (rnd1/10 % 10) + (rnd1/100 % 10);
+        int score2 = (rnd2 % 10) + (rnd2/10 % 10) + (rnd2/100 % 10);
+        int score3 = (rnd3 % 10) + (rnd3/10 % 10) + (rnd3/100 % 10);
+        int score = score1 + score2 + score3;
+        
+        void paste()
+        {
+        
+            
+        rnd = rand() % 999999999; 
+    
+        rnd1 = rnd/1000000 % 1000;
+        rnd2 = rnd/1000 % 1000;
+        rnd3 = rnd % 1000;
+        
+        
+        score1 = (rnd1 % 10) + (rnd1/10 % 10) + (rnd1/100 % 10);
+        score2 = (rnd2 % 10) + (rnd2/10 % 10) + (rnd2/100 % 10);
+        score3 = (rnd3 % 10) + (rnd3/10 % 10) + (rnd3/100 % 10);
+        score = score1 + score2 + score3;
+        
+                cout << rnd1 << " " << rnd2 << " " << rnd3 << " : " << score1 << " + " <<  score2 << " + " << score3 << " : score " << score << endl;
+
+        }
+        
+        
+    };
+    
+    rum f1;
+    int score = 0;
+    int* pntr = &f1.score;
+    
+    string key = "n";
+    
+
+    
+    
+    while(key != "s")
+    {
+        f1.paste();
+        
+        score += *pntr;
+
+        cout << "Total score; " << score << endl;
+        getline(cin, key);
+    }
+    
+    
+}
